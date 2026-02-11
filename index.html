@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Chitransha ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  text-align:center;
+}
+.box{
+  background:rgba(255,255,255,0.18);
+  padding:30px;
+  width:90%;
+  max-width:420px;
+  border-radius:22px;
+  backdrop-filter:blur(10px);
+  animation:fadeIn .5s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+button{
+  margin-top:20px;
+  padding:12px 26px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.yes{
+  background:#fff;
+  color:#ff4f7b;
+}
+.no{
+  background:#ffd1dc;
+  color:#ff4f7b;
+  position:absolute;
+}
+.emoji{font-size:42px;margin-bottom:10px;}
+.couple{font-size:36px;margin:8px 0;}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="content">
+  <div class="emoji">👀</div>
+  <h2>Hey gurl...😌 </h2>
+  <p>
+    Ye page sirf ek click ka nahi hai 😌  
+    meeri feelings ka pitara hai
+    agar aapko meri felings janni hai
+    to madam.. kripya dabaiyega
+    **"ji haannn jaroor" 💫**
+  </p>
+  <button onclick="next()">ji haannn jaroor 👉</button>
+</div>
+
+<script>
+let step = 0;
+
+const pages = [
+
+`<div class="emoji">🌹</div>
+<h2>deekh ye Valentine Week hai…</h2>
+<p>
+Aur iss week me sab log sirf gifts dete hain…  
+lekin main tujhe kuch 
+**words dena chahta hoon** 💖  
+Kyuki words dil se nikalte hain…  
+aur gift ka kya hai ki.. 
+pese ki dikkat babu bhaiyaaa😄😄 "jk"
+</p>`,
+
+`<div class="emoji">😊</div>
+<h2>Dear Chitra …</h2>
+<p>
+listen... Tumhari presence   
+mere mood ka pura weather change kar deti hai 🌤️  
+Aur jab tum khush hoti ho na…  
+toh me bhi khush ho jata hu 
+idk why but ho jata hun.
+</p>`,
+
+`<div class="emoji">🫶</div>
+<h2>Grateful hoon…</h2>
+<p>
+Main life me grateful hun 
+to have you as a friend 💗  
+i know its awkward but i feel like
+i should tell you so i am telling you.
+</p>`,
+
+`<div class="emoji">🥹</div>
+<h2>Har situation me…</h2>
+<p>
+I know ki abhi sahi se friendship bhi nahi hui hai
+but i know ki tum ek achhi friend ban sakti ho meri 
+**chahta to chat me bol deta
+pr meri Gmasti to dekho** 🤍  
+</p>`,
+
+`<div class="emoji">🌈</div>
+<div class="Friend">✨</div>
+<h2>Everyday promise…</h2>
+<p>
+I dont think ki tumko achha lgega ya bura  🌹  
+i want you to take it casually 
+but i made it for you 🤍
+</p>`,
+
+`<div class="emoji">💞</div>
+<h2>Chitra...…</h2>
+<p>
+Ye page khatam ho raha hai…  
+lekin jo Gmasti hai meri wo nahi.  
+Ye sirf ek question hai,  
+bahut pyaar ke saath…
+</p>`,
+
+`<div class="emoji">💍</div>
+<div class="i just wanna ask that">❤️</div>
+<h2>Will you be my normal wali friend?😅 </h2>
+<p>  
+kya tum meri friend baniogi?😂😅
+yes or yes...😂😅 no ka option hi nahi hai
+click kr sake to karle🤣  
+</p>
+
+<div style="margin-top:25px; position:relative; height:80px;">
+  <button class="yes" onclick="yes()">YES 😍</button>
+  <button class="no" id="noBtn">NO 🙈</button>
+</div>`
+];
+
+function next(){
+  step++;
+  if(step < pages.length){
+    document.getElementById("content").innerHTML =
+      pages[step] + '<button class="yes" onclick="next()">Next 👉</button>';
+  }
+  if(step === pages.length - 1){
+    setTimeout(noRun,500);
+  }
+}
+
+function noRun(){
+  const noBtn = document.getElementById("noBtn");
+  if(!noBtn) return;
+
+  noBtn.addEventListener("mouseover",()=>{
+    const x = Math.random()*200 - 100;
+    const y = Math.random()*120 - 60;
+    noBtn.style.transform = `translate(${x}px,${y}px)`;
+  });
+}
+
+function yes(){
+  document.getElementById("content").innerHTML = `
+  <div class="emoji">🥹💖</div>
+  <div class="couple">💕🌸</div>
+  <h2>You just made me really happy…</h2>
+  <p>
+    Thank you Chitra 🤍  
+  </p>
+  <p style="font-size:14px;margin-top:15px;">
+    — Yours Friend kunwar🙃, with real frieendship intention 💕😉
+  </p>`;
+}
+</script>
+
+</body>
+</html>
